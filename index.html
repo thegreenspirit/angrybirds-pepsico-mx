@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">    
+    <head>
+        <title>Angry Birds Vuela Tazos</title>        
+		<meta name="description" content="Angry Birds Vuela Tazos. Prueba el nuevo juego." />	        
+        <meta name="google" value="notranslate" />         
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Cache-Control" content="Public"/>
+        <meta http-equiv="Expires" content="Mon, 31 Dec 2012 12:00:00 GMT"/>
+        <meta property="og:image" content="images/ab_vuela_tazos_share_fb.png"/>
+        
+        <!-- <meta http-equiv="Expires" content="Mon, 31 Dec 2012 12:00:00 GMT"/> -->
+        
+        <!-- Include CSS to eliminate any default margins/padding and set the height of the html element and 
+             the body element to 100%, because Firefox, or any Gecko based browser, interprets percentage as 
+             the percentage of the height of its parent container, which has to be set explicitly.  Fix for
+             Firefox 3.6 focus border issues.  Initially, don't display flashContent div so it won't show 
+             if JavaScript disabled.
+        -->
+        <style type="text/css" media="screen"> 
+            
+            object:focus { outline:none; }
+            #flashContent { display:none; }
+            
+        </style>
+        
+        <!-- 960 Grid Layout -->
+        <link rel="stylesheet" type="text/css" href="css/grid.css" />
+        <!-- common css styles -->
+        <link rel="stylesheet" type="text/css" href="css/common.css" />    
+        <!-- promotion css -->
+        <link rel="stylesheet" type="text/css" href="css/promo.css" />
+        <!-- FB share image -->
+        <link rel="image_src" type="image/png" href="images/ab_vuela_tazos_share_fb.png" />
+        
+        <style type="text/css">
+		body {
+			color: #ffffff;		
+			background: #20150F;
+			background-image: url('images/vuelatazos_bg3.jpg');
+			background-repeat:repeat-x;	
+			
+			
+		}
+		</style>        				
+	    
+		
+		<!-- Holds common functionality for page -->				        
+        <script type="text/javascript" src="js/common.js"> </script>
+        <!-- Fix for Mac Scrolling -->            
+        <script type="text/javascript" src="js/swfwheel.js"> </script>
+                  
+        <!-- Google Analytics tracking -->
+        <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-23082676-9']);	
+		  //_gaq.push(['_setSampleRate', '10']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+              
+		<script type="text/javascript" src="js/jquery-1.7.min.js"> </script>    
+        <script type="text/javascript" src="flash/swfobject.js"> </script>
+        
+        
+        <script type="text/javascript">
+        var playerVersion = swfobject.getFlashPlayerVersion();
+		      
+		var rndValue = 0;       
+        //If IE, create a random value so flash movie is refreshed when refreshing page. -->
+        
+        if (isIE()) {        
+        	rndValue = Math.random();
+        }
+		
+        if (playerVersion.major > 10 && !isMobile()) {
+            // For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. 
+            var swfVersionStr = "11.0.0";
+            // To use express install, set to playerProductInstall.swf, otherwise the empty string. 
+            var xiSwfUrlStr = "flash/playerProductInstall.swf";
+            var flashvars = {assetsUrl: "/flash/", buildNumber:"1-0-0-11.355833161662120656"};
+            var params = {};
+            params.quality = "high";
+            params.bgcolor = "#91CEED";
+            params.allowscriptaccess = "sameDomain";
+            params.allowfullscreen = "true";
+            params.wmode = "direct";
+            var attributes = {};
+            attributes.id = "AngryBirdsFP11";
+            attributes.name = "AngryBirdsFP11";
+            attributes.align = "middle";
+            attributes.style ="margin-left: 4px;margin-top: 4px;";
+            swfobject.embedSWF(
+                "flash/PepsiMexico.swf?version=1-0-0-11.355833161662120656&refresh=" + rndValue, "flashContent",
+                "980", "570", 
+                swfVersionStr, xiSwfUrlStr, 
+                flashvars, params, attributes);
+            // JavaScript enabled so display the flashContent div in case it is not replaced with a swf object.
+            swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+
+        }
+        
+
+        </script>
+          
+		<script type="text/javascript" >
+		
+			function hideScrollbars() {
+			    $('body').css('overflow', 'hidden');
+			}
+			
+			function showScrollbars() {
+			    $('body').css('overflow', 'auto');
+			}
+			/*
+				Prevents the scroll bar from scrolling.
+			*/
+			function stopWheel(e){
+			    if(!e){ /* IE7, IE8, Chrome, Safari */ 
+			        e = window.event; 
+			    }
+			    if(e.preventDefault) { /* Chrome, Safari, Firefox */ 
+			        e.preventDefault();			       
+			    } 
+			    if (e.stopPropagation) {
+					e.stopPropagation();
+					e.preventDefault();
+				}
+			    e.returnValue = false; /* IE7, IE8 */
+			}
+		
+			/*
+				Tracks the event in Google Analytics. 
+				
+				@eventCategory The category of the event as string. e.g. 'Links'. Cannot be empty.
+				@eventAction The action of the event as string. e.g. 'Button'. Optional.
+				@eventLabel The label of the event as string. e.g. 'MyButton'. Optional.
+				@eventValue An integer value. Optional.
+			*/
+			function trackEvent(eventCategory, eventAction, eventLabel, eventValue) {				
+				if (eventCategory == null) {
+					return;
+				} 
+				if (eventAction == null) {
+					eventAction = '';
+				}
+				if (eventLabel == null) {
+					eventLabel = '';
+				}
+								
+				if (eventValue == null) {
+					_gaq.push(['_trackEvent', eventCategory, eventAction, eventLabel]);
+				} else {
+					_gaq.push(['_trackEvent', eventCategory, eventAction, eventLabel, eventValue]);
+				}
+			}
+			
+			/*
+				When the document has loaded
+			*/
+		    $(document).ready(function(e) {
+			    
+		    	//check screen size and correct div based on it 
+		    	if (screen.width <= 1024) {
+		    		$('#divContent_1').removeClass('padAll16').addClass('padAll4');
+		    	}
+		    	
+		    	loadNavigationButtons();		
+		    	
+		    	
+		    	if (playerVersion.major < 11) {		            
+		        	$('#flashContent').show();        	
+		        }
+		        if (isMobile()) {
+		        	$('#flashContent').show();
+		        	$('#flashContent').html('<div class=\'center\'>No está disponible en dispositivos móviles</div>')
+		        }
+		    	
+				/* Disable scrolling when mouse over game div */
+		    	$('#divContent_1').hover(function() {
+
+		    		if (isFF()) {
+					    
+				    	document.onmousewheel = function(){ stopWheel(); } /* IE7, IE8 */
+				    	if(document.addEventListener){ /* Chrome, Safari, Firefox */
+				    	    document.addEventListener('DOMMouseScroll', stopWheel, false);
+				    	}
+				    } else if (isMac()) {
+				    	//other browsers on Mac
+	    	    		hideScrollbars();
+				    } else {		    	    
+			    	    $(document).bind('mousewheel DOMMouseScroll',function(){
+			    	    	//if mac, hide the scrollbar instead
+			    	    		    	    
+		    	        	stopWheel();
+			    	        
+			    	    });			    	   
+		    	    }
+		    	    
+		    	}, function() {
+					if (isFF()) {
+					    				    	
+				    	if(document.removeEventListener){ /* Chrome, Safari, Firefox */
+				    	    document.removeEventListener('DOMMouseScroll', stopWheel, false);
+				    	}
+				    } else if (isMac()) {
+				    	//other browsers on Mac
+ 			    		showScrollbars();
+				    } else {
+ 			    		$(document).unbind('mousewheel DOMMouseScroll'); 			    		
+ 			    	}
+		    	    
+		    	});
+			});		
+		    
+		    function handleonkeydown(e) {
+		    	if (isIE()) {		    			    
+			    	if (e.keyCode == 9) {
+			        	e.preventDefault();
+			    	}
+		    	}
+		    }
+		    
+	    </script>  
+    </head>
+    <body onkeydown="handleonkeydown(event);">    	
+    	<!-- Page Holder -->
+    	<div class="container container_8" id="PageHolder">
+    		<!-- AB Banner -->
+    		<div class="grid_3" >
+    			<div class="logo"></div> 
+    		</div>    	    	    		
+    		<div class="left textRight" id="BannerTop">
+    		<!-- Promo nav -->
+    			<ul class="menu">
+					<li><a href="http://www.vuelatazos.com/index.html" onclick="trackEvent('Links', 'Buttons', 'INICIO');" class="btn01"></a></li>
+					<li><a href="http://www.vuelatazos.com/productos.html" onclick="trackEvent('Links', 'Buttons', 'PRODUCTOS');" class="btn02"></a></li>
+					<li><a href="http://www.vuelatazos.com/mecanica.html" onclick="trackEvent('Links', 'Buttons', 'MECÁNICA');" class="btn03"></a></li>
+					<li><a href="http://www.vuelatazos.com/juego.html" onclick="trackEvent('Links', 'Buttons', 'JUEGO');" class="btn04"></a></li>
+					<li><a href="http://www.vuelatazos.com/comerciales.html" onclick="trackEvent('Links', 'Buttons', 'COMERCIALES');" class="btn05"></a></li>					
+				</ul>
+				<div class="left compEndText">La competencia ha terminado</div>
+				<div id="menuExtraButtons">
+				 
+				<ul class="menu">					
+					<li><a href="javascript:;" onclick="trackEvent('Links', 'Buttons', 'FAQ');displayFAQ();" class="btn06"></a></li>
+					<li><a href="javascript:;" onclick="trackEvent('Links', 'Buttons', 'GANADORES');displayWinners();" class="btn08"></a></li>
+				</ul>
+				</div>
+    		
+    		</div>
+		
+	        <div class="clear"></div>
+	        
+    		<!-- <div  id="BannerLeft" class="grid_1">Banner Left</div> -->
+	        <!-- SWFObject's dynamic embed method replaces this alternative HTML content with Flash content when enough 
+	             JavaScript and Flash plug-in support is available. The div is initially hidden so that it doesn't show
+	             when JavaScript is disabled.
+	        -->	        
+	        
+	        <div id="divContent_1" class="grid_8 divContent padAll16" >
+           	<div id="flashContent">	            
+                Para ver esta página asegúrese de que Adobe Flash Player versión 11.0.0 o posterior está instalado.
+
+	            <a href="http://www.adobe.com/go/getflashplayer" onclick="trackEvent('Links', 'Download', 'Flash Player Scripts');">Get Adobe Flash Player</a>
+	            
+	        </div>
+					
+	        <noscript>
+	            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1024" height="768" id="AngryBirdsFP11">
+	                <param name="movie" value="PepsiMexico.swf" />
+	                <param name="quality" value="high" />
+	                <param name="bgcolor" value="#505050" />
+	                <param name="allowScriptAccess" value="sameDomain" />
+	                <param name="allowFullScreen" value="true" />
+	                <!--[if !IE]>-->
+	                <object type="application/x-shockwave-flash" data="PepsiMexico.swf" width="1024" height="768">
+	                    <param name="quality" value="high" />
+	                    <param name="bgcolor" value="#505050" />
+	                    <param name="allowScriptAccess" value="sameDomain" />
+	                    <param name="allowFullScreen" value="true" />
+	                <!--<![endif]-->
+	                <!--[if gte IE 6]>-->               	        
+	                        Scripts y active content no están habilitados o Adobe Flash Player version 11.0.0 o superior no está instalado.	                    
+	                <!--<![endif]-->             	    
+	                    <a href="http://www.adobe.com/go/getflashplayer" onclick="trackEvent('Links', 'Download', 'Flash Player Scripts');">Get Adobe Flash Player</a>	                
+	                <!--[if !IE]>-->
+	                </object>
+	                <!--<![endif]-->
+	            </object>
+	        </noscript>
+	        </div>
+	        
+	        <!-- <div id="divContent_2" style="display:none;" class="grid_8 divContent">Content 2 </div>
+	        <div id="divContent_3" style="display:none;" class="grid_8 divContent">Content 3 </div>
+	        <div id="divContent_4" style="display:none;" class="grid_8 divContent">Content 4 </div>
+     	    <div id="divContent_5" style="display:none;" class="grid_8 divContent">Content 5 </div>
+	        
+	                 -->
+	        <div class="clear"></div>
+	      
+	        </div>
+	        <div id="Footer">
+		        <div class="container_8 pad_16 smallText">
+		        <div class="footerText grid_3">© 2011 Rovio. All rights reserved. LEGAL NOTICE. <br/>Angry Birds is © 2011 Rovio Entertainment Ltd. Angry Birds is TM Rovio Entertainment Ltd. All rights reserved. 
+	    			<br/><a href="javascript:;" onclick="displayPrivacy();trackEvent('Links', 'Footer', 'Privacy Policy');">Política de Privacidad</a> <a href="javascript:;" onclick="displayEula();trackEvent('Links', 'Footer', 'EULA');">EULA</a>
+    				<br/>
+    				
+    			</div>
+    				<div class="footerText grid_5">
+    					<div id="footerOptimizedForChrome" class="left center">Optimizado para <a title="Google Chrome" href="https://www.google.com/chrome" onclick="trackEvent('Links', 'Footer', 'Download Google Chrome');" target="_blank"><img src="images/logos/chrome_logo_24.png" style="vertical-align:middle;margin-left: 2px;" border="0" alt="Chrome"/></a></div>    				
+    					<div style="margin-left:370px;">
+    					<div style="padding-bottom: 8px;margin-left: -12px;"><img src="images/logos/seasons_logo.png" style="vertical-align:middle;" alt="Angry Birds Seasons"/></div>
+    					<div class="textRight">
+    						<a target="_blank" href="http://click.linksynergy.com/fs-bin/stat?id=S2IG7luLsxo&offerid=146261&type=3&subid=0&tmpid=1826&RD_PARM1=http%253A%252F%252Fitunes.apple.com%252Fus%252Fapp%252Fangry-birds-halloween%252Fid398157641%253Fmt%253D8%2526uo%253D4%2526partnerId%" onclick="trackEvent('Links', 'Footer', 'Download iPhone');"><img border="0" src="images/logos/App_Store_Badge_EN_0609.png"/></a><a target="_blank" href="https://market.android.com/details?id=com.rovio.angrybirdsseasons" onclick="trackEvent('Links', 'Footer', 'Download Android Market');"><img style="margin-left: 12px;" border="0" src="images/logos/Android_Market_Logo.png"/></a>
+   						</div>
+   						</div>
+    				</div>
+    				    			
+	     		</div>	        	
+       		</div>       		
+   </body>
+</html>

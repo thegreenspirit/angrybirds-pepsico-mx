@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Ganadores</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  
+<!-- 960 Grid Layout -->
+<link rel="stylesheet" type="text/css" href="../css/grid.css" />
+<!-- common css styles -->
+<link rel="stylesheet" type="text/css" href="../css/common.css" />                    
+<script type="text/javascript" src="../js/common.js"></script>            
+    
+<!-- Google Analytics tracking -->
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-23082676-9']);	//change this, testing now.
+_gaq.push(['_setSampleRate', '10']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+          
+<script type="text/javascript" src="../js/jquery-1.7.min.js"> </script>        
+    
+<style type="text/css">
+body {
+	margin:0;
+	background: #fff;
+	color:#07152d;
+}
+</style>
+</head>
+<body>
+
+<div id="winnerBanner"></div>
+<div class="content">
+	
+	<div id="winnerContent">
+		
+	</div>
+	
+	<script type="text/javascript">
+	
+	
+		/*
+			Toggles the winners for the selected competition.
+			
+			@param obj The Element that calls the method.
+			@param winData The nr of the element
+		*/
+		function toggleWinners(obj, winData) {				
+			//call and get ajax		
+			if ($(obj).children() == null || $(obj).children().length == 0) {
+				//fetch the winners by ajax
+				getWinners(obj, winData, function() {
+					$(obj).children().slideToggle('fast');
+				});	
+				
+			} else {
+				$(obj).children().slideToggle('fast');
+			}
+			
+		}
+		
+		//get the competitions
+		getCompetitions();
+		   		
+			
+		/*
+			Get competitions from server.
+		*/
+		function getCompetitions() {
+			
+        	var getFeeds = $.ajax({
+	        		type : 'GET',
+					contentType : 'application/json; charset=utf-8',
+					url : '../winners?competition=-1',         		    					
+        			dataType : 'json',
+					success : function(data) {					
+						//initial competition
+        				createCompetitions(data);
+            	
+            	}
+        	});        	
+		}
+		
+		/*
+			Gets all the winners for the speicific week/competition period.
+			Sends an ajax request to get the winners. 
+			
+			@param obj The element that calls the function.
+			@param nr The competition nr, uses the #winner_n where n is number of div e.g. 'winner_0' for comp 0. populates the winners in this div.
+			@param callback A Callback method for when the ajax request and the div creation is completed.
+		*/
+		function getWinners(obj,nr,callback) {
+			var url = '../winners?competition='+ nr;
+			var getFeeds = $.ajax({
+        		type : 'GET',
+				contentType : 'application/json; charset=utf-8',
+				url: url,	    					
+       			dataType : 'json',
+				success : function(data) {		
+    				createWinnerContent(obj, data);
+    				callback();
+           		}
+       		});
+			
+		}
+		
+		/*
+			Creates 3xcolumns of the 50 winners per competition.
+			
+			@param obj The element that calls the function.
+			@param data The data from the server.
+		*/
+		function createWinnerContent(obj, data) {
+			$(obj).children().empty();
+			var htmlContent = '';
+			
+					
+				var col2nd = '';				
+				var divContent = '<div id=\'\' style=\'display:none;\' class=\'winnerContent div-table div-table-row\' >'
+							//loop through the competitions
+							$.each(data.listsWinners, function (j, listWinner) {
+								divContent += '<div class=\'div-table-col\' >';
+								if (j == 0) {
+									image = 'sabritas_logo.png';
+								} else if (j == 1) {
+									image = 'gamesa_logo.png';
+								} else if (j == 2) {
+									image = 'pepsi_logo.png';
+								}
+								
+								
+								divContent += '<div class=\'tableHeader\' style=\'text-align:center\'><img src=\'../images/logos/' + image + '\'/></div>';
+								
+								$.each(data.listsWinners[j], function (k, winner) {
+									if (k % 2 == 0) {
+										col2nd = 'col2nd';
+									} else {
+										col2nd = '';
+									}
+									
+									
+									
+									divContent += '<div class=\'columnText ' + col2nd + '\'>'									
+									 + '<div class=\'left\' style=\'padding-left:4px;width: 120px;\'> '
+									 + winner.nickName
+									 + '</div>'
+									 + '<div>'
+									 + winner.score
+									 + '</div>'
+									+ '</div>';
+								});							
+								divContent +=  '</div>'
+							});
+												
+							+ '</div>'							
+							+ '<div class="clear"> </div>';
+				 			
+				htmlContent += divContent;
+				
+				$(obj).append(htmlContent);
+				
+				
+			
+		}
+		
+		/*
+			Create the competitions and drop down latest by default. 
+			
+			@param data The data from the server.
+		*/
+		function createCompetitions(data) {
+
+			var htmlContent = '';
+			
+			//No winners yet, show message of this.
+			if (data == null || data.listCompetitions == null) {
+				$('#winnerContent').html('<h1 class=\'center\'>Todavía no hay ganadores. Por favor inténtelo de nuevo más tarde ...</h1>');
+				return;
+			}
+			$.each(data.listCompetitions, function(i, item) {			
+				var col2nd = '';
+				htmlContent += '<div id=\'winner_' + i + '\' class=\'winnerTitle\' onclick=\'toggleWinners(this,' + i +');\'>' + eval(i+1) + '. '  + item + '</div>';				
+				 			
+				
+				$('#winnerContent').html(htmlContent);
+				
+				
+			});
+			//open latest winners as default
+			if ($('#winner_0').length > 0) {
+				
+				toggleWinners($('#winner_0'), 0);
+			}
+		}
+		
+		
+	</script>
+	<p> </p>
+	<p> </p>
+	</div>
+</body>
+</html>

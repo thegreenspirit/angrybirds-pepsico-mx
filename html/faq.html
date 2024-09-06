@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Ayuda</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  
+<!-- 960 Grid Layout -->
+<link rel="stylesheet" type="text/css" href="../css/grid.css" />
+<!-- common css styles -->
+<link rel="stylesheet" type="text/css" href="../css/common.css" />                    
+<script type="text/javascript" src="../js/common.js"></script>            
+    
+<!-- Google Analytics tracking -->
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-23082676-9']);	//change this, testing now.
+_gaq.push(['_setSampleRate', '10']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+          
+<script type="text/javascript" src="../js/jquery-1.7.min.js"> </script>        
+    
+<style type="text/css">
+body {
+	margin:0;
+	background: #fff;
+	color:#07152d;
+}
+
+
+a {
+	font-size: 12px;
+	color: #013476;
+	text-decoration:none;
+	font-weight: bold;
+}
+a:link {
+	color: #013476;
+	text-decoration:underline;
+}
+
+a:hover {
+	color: #5FB3D8;
+	text-decoration:none;
+}
+a:active {
+	color: #5FB3D8;
+	text-decoration:none;
+}
+a:visited {
+	color: #013476;
+	text-decoration:none;
+}
+</style>
+</head>
+<body>
+
+<div id="faqBanner"></div>
+<div class="content">
+	
+	<div id="faqContent"></div>
+	<script type="text/javascript">
+		function toggleFaq(obj) {
+			//$('.faqContent').hide();	
+			$(obj).children().slideToggle("fast");	
+				
+				
+		}
+		
+		var jsonFaq = {"faq": [
+		   {"title": "¿Cómo obtengo códigos para desbloquear los niveles 4 al 6?", "content":"Puedes obtener los códigos en las tapas de Pepsi y en los Vuela Tazos especiales con códigos que se encuentran en productos de Sabritas, Gamesa y Sonrics, para mayor información consulta <a href='http://www.vuelatazos.com' target='_blank'>www.vuelatazos.com</a>"},
+		   {"title": "¿Cuánto dura la competencia?", "content":"Hay una competencia semanal por cada nivel especial  de lunes a domingo. La tabla de marcadores se reinicia los domingos a media noche."},
+		   {"title": "¿Quién gana una vez que la competencia ha terminado?", "content":"Cada uno de los jugadores en la tabla de marcadores ganará un premio. Hay 50 ganadores por cada nivel y la lista se reiniciará cada domingo a la media noche para iniciar de nuevo cada lunes siguiente hasta el 11 de Marzo. Sólo los 50 jugadores con mayor puntaje por intento de  cada uno de los 3 niveles especiales aparecerán en la lista de ganadores."},
+		   {"title": "¿Qué requisitos son necesarios para participar?", "content":"La promoción es válida en toda la República Mexicana y podrá participar en la competencia semanal cualquier persona que cuente con un código válido. Promoción válida del 9 de Enero del 2012 al 11 de Marzo del 2012 "},
+		   {"title": "¿Cuántas veces puedo intentar lograr un marcador ganador?", "content":"Puedes intentar cuantas veces quieras mientras dure la competencia semanal. Todos los domingos a media noche se cierra la competencia e inicia una nueva competencia semanal."},
+		   {"title": "¿Puedo continuar jugando Angry Birds Vuela Tazos una vez que haya finalizado la competencia?", "content":"Las competencias por premios terminan el 19  de marzo pero podrás seguir jugando Angry Birds Vuela Tazos hasta el 31 de Julio de 2012."},
+		   {"title": "¿Cuándo recibiré mi premio?", "content":"Los ganadores serán contactados semanalmente por medio de correo electrónico para que proporcionen un domicilio de entrega del premio. Es importante que te asegures que el correo electrónico que proporciones al registrarte sea válido, de lo contrario será imposible contactarte."},
+		   {"title": "¿Puedo jugar Angry Birds Vuela Tazos en mi teléfono o dispositivo móvil?", "content":"Desafortunadamente no, el juego funciona únicamente en navegadores en computadoras personales."},
+		   {"title": "¿Por qué el juego se frena o alenta o traba al momento de jugar? ", "content":"Asegúrate no tener varias instancias del juego abiertas en diferentes ventanas, de lo contrario, intenta jugar el juego en una computadora con más memoria o un procesador más rápido."},		   
+		   {"title": "¿Por qué el juego se ejecuta lentamente  en mi ordenador? ", "content":"Prueba a actualizar los controladores de video. <br/><br/><a href='\http://www.amd.com'\ target=\'_blank\'>AMD</a><br/><a href='\http://www.intel.com'\ target=\'_blank\'>Intel</a><br/><a href='\http://www.nvidia.com'\ target=\'_blank\'>NVIDIA</a>"},
+		]};
+		
+		var htmlContent = '';
+		$.each(jsonFaq.faq, function(i) {
+			
+			htmlContent += '<div class=\'faqTitle\' onclick=\'toggleFaq(this);\'>' + eval(i+1) + '. '  + jsonFaq.faq[i].title
+						+ '<p id=\'\' style=\'display:none;\' class=\'faqContent\'>'+ jsonFaq.faq[i].content + '</p>'
+						+ '</div>';
+						
+			$('#faqContent').html(htmlContent);
+		});
+	</script>
+	<p> </p>
+	<p> </p>
+	</div>
+</body>
+</html>

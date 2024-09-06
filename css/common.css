@@ -1,0 +1,464 @@
+body {
+	background: #FDE6D8;
+	color: #1C110D;
+	font-family:Tahoma;
+	font-size: 12px;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+#PageHolder {
+	height: 710px;	
+}
+
+a {
+	font-size: 14px;
+	color: #A58D7D;
+	text-decoration:none;
+	font-weight: bold;
+}
+a:link {
+	color: #A58D7D;
+	text-decoration:underline;
+}
+
+a:hover {
+	color: #A58D7D;
+	text-decoration:none;
+}
+a:active {
+	color: #A58D7D;
+	text-decoration:none;
+}
+a:visited {
+	color: #A58D7D;
+	text-decoration:none;
+}
+.content {
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 20px;
+	text-align:justify;
+	color: #07152d;
+	
+}
+.border_6 {
+	border-radius: 12px;
+	-moz-border-radius: 12px;
+}
+
+.border {
+	border:4px solid #ffffff;	
+}
+.interactive {
+	cursor:pointer;
+	cursor: hand;	
+}
+.left {
+	float:left;
+}
+
+.color_1 {
+	color:#9AB4C0;
+}
+
+.bgcolor_1 {
+	background:#02213D;	
+}
+.pad_8 {
+	padding:8px;
+}
+
+.pad_16 {	
+	padding-top: 16px;
+}
+.padAll4 {
+	padding-bottom: 4px;
+	padding-top: 4px;
+	padding-left: 4px;
+	padding-right: 4px;	
+}
+.padAll16 {
+	padding-bottom: 16px;
+	padding-top: 16px;
+	padding-left: 16px;
+	padding-right: 16px;	
+}
+.linkDiv {
+	padding: 12px;
+	background: #033F76;
+	color: #9AB4C0;	
+	height: 90px;
+	width: 108px;
+}
+
+.linkDivSelected {
+	padding: 12px;
+	background: #033F76;
+	background: #D8F2FA;
+	color: #02223D;		
+}
+
+.linkDiv:hover {
+	background: #D8F2FA;
+	color: #02223D;
+	cursor:pointer;
+	cursor: hand;	
+}
+
+.divContent {
+	height: 580px;
+	width: 1004px;
+	overflow-y:auto;
+	overflow-x:hidden;
+	border: 4px solid #FFC600;
+	border-radius: 24px;
+	background: #fff;
+	color:#1C110D;
+	-moz-box-shadow: 0 0 24px 0px #666;
+	-webkit-box-shadow: 0 0 24px 0px #666;
+	box-shadow:  0 0 24px 0px #666;
+}
+.borderYellow {
+	border: 4px solid #FDFF80;
+	border-radius: 24px;	
+}
+
+.shadow {
+	-moz-box-shadow: 0 0 24px 0px #000;
+	-webkit-box-shadow: 0 0 24px 0px #000;
+	box-shadow:  0 0 24px 0px #000;	
+}
+
+.linkDivDot {
+	position: relative;
+	left: -20px;
+	top: 28px;
+	background: #D8F2FA;
+	width: 20px;
+	height: 20px;
+	z-index: 1000;
+}
+
+.faqTitle {
+	
+	text-align:left;
+	width: 100%;
+	background: #fff;
+	color: #07152d;	
+	padding: 12px;	
+	border-top: 1px dotted #D9F1FB;
+	font-size: 14px;
+	font-weight:bold;
+	cursor:pointer;
+	cursor: hand;
+	
+}
+
+.faqTitle:hover {
+	color:#07152d;
+	background: #74D2EB;
+	font-weight:bold;
+	
+}
+
+.faqContent {	
+	text-align:left;
+	width: 400px;	
+	color: #07152d;
+	font-weight: normal;
+	font-size: 12px;
+	
+}
+
+#BannerBottom {
+	margin-top: 24px;
+	background: #E7F9FD;
+	font-size: 12px;
+	color: #1C110D;
+}
+#BannerTop {
+	margin-top: 18px;
+	height: 60px;
+	margin-left: 146px;
+}
+
+.textRight {
+	text-align: right;	
+}
+.smallText {
+	font-size: 10px;	
+}
+
+#BannerLeft {
+	background: #033F76;
+	height: 570px;
+}
+#BannerRight {
+	background: #033F76;
+	height: 570px;
+}
+
+#Footer {
+	background: #20150F;
+	background-image: url('../images/vuelatazos_bg4.jpg');
+	background-repeat:repeat-x;	
+	width: 100%;
+	height: 200px;
+		
+}
+.boxShadow {
+	-moz-box-shadow: 0 0 8px 8px #888;
+	-webkit-box-shadow: 0 0 8px 8px#888;
+	box-shadow: 0 0 8px 8px #888;	
+}
+
+#overlay {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	background: #000000;
+	opacity: .80;
+	filter: alpha(opacity=80);
+	-moz-opacity: .80;
+	z-index: 100;
+	display:none;
+}
+
+#dialogWindow {	
+	background: #E7F9FD;	
+	display:none;	
+	top: 50%;
+	left:50%;
+	position:relative;	
+	z-index: 101;
+	font-size: 12px;
+	
+}
+
+/* Buttons */
+.btnLink1HoverOn {
+	background: transparent url('../images/btn/button_inicio_over.png');
+}
+.btnLink2HoverOn {
+	background: transparent url('../images/btn/button_faq_over.png');
+}
+.btnLink3HoverOn {
+	background: transparent url('../images/btn/button_normas_over.png');
+}
+.btnLink4HoverOn {
+	background: transparent url('../images/btn/button_productos_over.png');
+}
+.btnLink5HoverOn {
+	background: transparent url('../images/btn/button_mecanica_over.png');
+}
+.btnLink6HoverOn {
+	background: transparent url('../images/btn/button_comersiales_over.png');
+}
+
+.btnLink1HoverOff {
+	background: transparent url('../images/btn/button_inicio_off.png');
+}
+.btnLink2HoverOff {
+	background: transparent url('../images/btn/button_faq_off.png');
+}
+.btnLink3HoverOff {
+	background: transparent url('../images/btn/button_normas_off.png');
+}
+.btnLink4HoverOff {
+	background: transparent url('../images/btn/button_productos_off.png');
+}
+.btnLink5HoverOff {
+	background: transparent url('../images/btn/button_mecanica_off.png');
+}
+.btnLink6HoverOff {
+	background: transparent url('../images/btn/button_comersiales_off.png');
+}
+
+.btnLink1Active {
+	background: transparent url('../images/btn/button_inicio_down.png');
+}
+.btnLink2Active {
+	background: transparent url('../images/btn/button_faq_down.png');
+}
+.btnLink3Active {
+	background: transparent url('../images/btn/button_normas_down.png');
+}
+.btnLink4Active {
+	background: transparent url('../images/btn/button_productos_down.png');
+}
+.btnLink5Active {
+	background: transparent url('../images/btn/button_mecanica_down.png');
+}
+.btnLink6Active {
+	background: transparent url('../images/btn/button_comersiales_down.png');
+}
+#btnLink1,#btnLink2,#btnLink3,#btnLink4,#btnLink5, #btnLink6 {
+	width: 110px;
+	height: 54px;		
+	border: 0px;
+	margin-left: -20px;
+}
+.btnLinkSize {
+	width: 91px;
+	height: 44px;	
+	background:transparent;
+	border: 0px;
+	
+	
+}
+.center {
+	text-align: center;	
+}
+.bigger {
+	font-size: 14px;
+}
+.footerText {
+	color: #A58D7D;
+	/* color: #fff; */
+	/*margin-top: 80px;*/
+	text-align:left;
+	padding-top: 12px;
+}
+#menuExtraButtons {
+	margin-left: 270px;margin-top: -12px	
+}
+#footerOptimizedForChrome {	
+	width: 300px;
+	font-size: 14px;	
+}
+
+#faqBanner {
+	width: 760px;
+	height: 174px;
+	background: transparent url('../images/faq.jpg');
+}
+
+#winnerBanner {
+	width: 760px;
+	height: 167px;
+	background: transparent url('../images/ganadores.jpg');
+}
+
+
+.winnerContent {	
+	text-align:left;
+	width: 440px;	
+	color: #07152d;
+	font-weight: normal;
+	font-size: 10px;
+	
+}
+
+.winnerTitle {
+	
+	text-align:left;
+	width: 100%;
+	background: #fff;
+	color: #07152d;	
+	padding: 12px;	
+	border-top: 1px dotted #D9F1FB;
+	font-size: 18px;
+	font-weight:bold;
+	cursor:pointer;
+	cursor: hand;
+	
+}
+
+.winnerTitle:hover {
+	color:#07152d;
+	background: #D9F1FB;
+	font-weight:bold;
+	
+}
+
+
+
+#rulesBanner {
+	width: 760px;
+	height: 169px;
+	background: transparent url('../images/normas.jpg');
+	
+}
+
+.competitionDiv {
+	display: table-cell;	
+	
+}
+
+
+.div-table{display:table; border:1px solid #fff;}
+
+.div-table-caption{display:table-caption; background:#fff;}
+
+.div-table-row{display:table-row;}
+
+.div-table-col{
+	display:table-cell;
+	padding-bottom: 12px;
+	border: 4px solid #efefef;
+	border-radius: 24px;	
+	table-layout:auto;
+	margin-left: 4px;
+	float:left;
+	background: #208BBF;
+	margin-top: 14px;
+}
+
+.tableHeader {
+	font-size: 14px;		
+	font-weight: bold;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	
+}
+.columnText {
+	font-weight: normal;
+	font-size: 12px;
+	padding: 8px;
+	font-weight: bold;
+	color: #fff;
+	width: 180px;
+}
+.col2nd {
+	background: #0755A0;
+}
+.compEndText {
+	font-family: OnomatoSharkOnomatoShark;
+	font-size: 17px;
+	font-weight: bold;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	position: absolute;
+	margin-left: -64px;
+	width: 370px;
+	text-align: right;
+	letter-spacing: 1px;
+}
+
+
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on December 15, 2011 */
+
+
+
+@font-face {
+    font-family: 'OnomatoSharkOnomatoShark';
+    src: url('../fonts/cartoon_onomatoshark-webfont.eot');
+    src: url('../fonts/cartoon_onomatoshark-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/cartoon_onomatoshark-webfont.woff') format('woff'),
+         url('../fonts/cartoon_onomatoshark-webfont.ttf') format('truetype'),
+         url('../fonts/cartoon_onomatoshark-webfont.svg#OnomatoSharkOnomatoShark') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+}
+

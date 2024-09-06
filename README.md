@@ -1,2 +1,2 @@
-# angrybirds-pepsico-mx
- Angry Birds Vuela Tazos "revival"
+# Angry Birds Vuela Tazos "revival"
+This speaks for itself, tbh.

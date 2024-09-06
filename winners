@@ -1,0 +1,20 @@
+<?php
+// WIP api (not like its necessary for the revival anyway)
+
+$listCompetitions = [
+	"Del 12.03.2012 al 18.03.2012",
+	"Del 05.03.2012 al 11.03.2012",
+	"Del 27.02.2012 al 04.03.2012",
+	"Del 20.02.2012 al 26.02.2012",
+	"Del 13.02.2012 al 19.02.2012",
+	"Del 06.02.2012 al 12.02.2012",
+	"Del 30.01.2012 al 05.02.2012",
+	"Del 23.01.2012 al 29.01.2012",
+	"Del 16.01.2012 al 22.01.2012",
+	"Del 09.01.2012 al 15.01.2012",
+]
+
+if ($_GET['competition'] == '-1') {
+	exit( json_encode(array("listCompetitions" => $listCompetitions, "currentCompetition":10)) );
+}
+?>

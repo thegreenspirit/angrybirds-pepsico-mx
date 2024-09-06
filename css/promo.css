@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+
+.menu{
+	display:block;
+	
+	height:41px;	
+}
+.menu li{
+	background:url(../images/btn/btnMenu00.png) no-repeat top;
+	width:90px;
+	height:41px;
+	display:block;
+	float:left;
+	width:90px;
+	height:41px;
+	list-style:none;
+	position:relative;
+}
+.menu li:hover{
+	background:url(../images/btn/btnMenu00.png) no-repeat bottom;
+}
+.menu a{
+	display:block;
+	width:90px;
+	height:41px;
+}
+.btn01{background:url(../images/btn/btnMenu01.png) no-repeat top center;}
+.btn02{background:url(../images/btn/btnMenu02.png) no-repeat top center;}
+.btn03{background:url(../images/btn/btnMenu03.png) no-repeat top center;}
+.btn04{background:url(../images/btn/btnMenu04.png) no-repeat top center;}
+.btn05{background:url(../images/btn/btnMenu05.png) no-repeat top center;}
+.btn06{background:url(../images/btn/btnMenu06.png) no-repeat top center;}
+.btn07{background:url(../images/btn/btnMenu07.png) no-repeat top center;}
+.btn08{background:url(../images/btn/btnMenu08.png) no-repeat top center;}
+.logo{
+	background:url(../images/logo.png);
+	width:417px;
+	height:91px;		
+	margin-bottom: 12px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
